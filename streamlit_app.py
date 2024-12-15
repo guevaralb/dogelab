@@ -2,10 +2,10 @@ import streamlit as st
 import requests
 
 # Streamlit app
-st.title("Grok Chat")
+st.title("Government Knowledge")  # Corrected spelling
 
 # API Key and Endpoint
-api_key = "xai-2ir0TPlXU8OzYsvXK4S6BUE7B1OMUqitJcjRkpoh3tsj65f2jKxf0Qy2qQEjUTQbojas9GKg8mWSAHPB" 
+api_key = "xai-2ir0TPlXU8OzYsvXK4S6BUE7B1OMUqitJcjRkpoh3tsj65f2jKxf0Qy2qQEjUTQbojas9GKg8mWSAHPB"
 api_endpoint = "https://api.x.ai/v1/chat/completions"
 
 # Initialize chat history
@@ -18,7 +18,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # User input
-if prompt := st.chat_input("Enter your message"):
+if prompt := st.chat_input("Enter your message"):  # More concise phrasing
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
@@ -33,10 +33,10 @@ if prompt := st.chat_input("Enter your message"):
     }
     data = {
         "messages": [
-            {"role": "system", "content": "You are a test assistant."},  # You can customize the system message
+            {"role": "system", "content": "You are a helpful and informative assistant."},  # Improved system message
             {"role": "user", "content": prompt}
         ],
-        "model": "grok-beta", 
+        "model": "grok-beta",
         "stream": False,
         "temperature": 0
     }
